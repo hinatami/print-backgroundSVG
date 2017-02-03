@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>IEでSVGの背景画像を印刷するバグ | まぼろしのSVG勉強会 その3</title>
+<meta name="description" content="「まぼろしのSVG勉強会 その3」用に作った発表資料です。">
 <!-- Google Fonts -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext">
 <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/mplus1p.css">
@@ -12,8 +13,6 @@
 <link rel="stylesheet" type='text/css' media='all' href="./css/base.css">
 <!-- CSS Colors -->
 <link rel="stylesheet" type='text/css' media='all' href="./css/colors.css">
-<!-- Optional - CSS SVG Icons (Font Awesome) -->
-<link rel="stylesheet" type='text/css' media='all' href="./css/svg-icons.css">
 <style>
 html, body {
   font-family: 'Mplus 1p', 'Roboto', 'San Francisco', helvetica, arial, sans-serif;
@@ -68,13 +67,6 @@ html, body {
     
   <main role="main">
     <article id="webslides" class="vertical">
-      
-        <!-- Quick Guide
-          - Each parent <section> in the <article id="webslides"> element is an individual slide.
-          - Vertical sliding = <article id="webslides" class="vertical">
-          - <div class="wrap"> = container 1200px / <div class="wrap size-50"> = 600px; 
-        -->
-      
       <section class="bg-gray">
         <span class="background dark" style="background-image:url('./images/slide_cover02.jpg')"></span>
         <!--.wrap = container 1200px -->
@@ -88,12 +80,10 @@ html, body {
       <section>
         <!--.wrap = container 1200px -->
         <div class="wrap size-50 aligncenter">
-          <!--<h2><strong>Why WebSlides?</strong></h2>-->
           <p class="text-intro">こんなデザインが上がってきたとして…</p>
           <div class="bg-white shadow">
             <img src="./images/slide01.png" alt="">
           </div>
-          <!-- .end .bg-white shadow -->
         </div>
         <!-- .end .wrap -->
       </section>
@@ -101,7 +91,6 @@ html, body {
       <section>
         <!--.wrap = container 1200px -->
         <div class="wrap size-50 aligncenter">
-          <!--<h2><strong>Why WebSlides?</strong></h2>-->
           <p class="text-intro"><strong>アイコン部分はSVGにしーよお♡</strong><br>って思うじゃないですか。</p>
           <p>実装するじゃないですか。</p>
           <div class="bg-white shadow">
@@ -111,7 +100,6 @@ html, body {
               <div class="sample sample-footer">SVG LOVE</div>
             </div>
           </div>
-          <!-- .end .bg-white shadow -->
         </div>
         <!-- .end .wrap -->
       </section>
@@ -119,14 +107,12 @@ html, body {
       <section>
         <!--.wrap = container 1200px -->
         <div class="wrap size-50 aligncenter">
-          <!--<h2><strong>Why WebSlides?</strong></h2>-->
           <p class="text-intro">サイトが出来上がってから<strong>「印刷対応して」</strong><br>って言われるじゃないですか。</p>
           <p>印刷用CSS用意して、各ブラウザで動作確認するじゃないですか。</p>
           <p>Chrome良し！ Firefox良し！ Safari良し！</p>
           <div class="bg-white shadow">
             <img src="./images/slide02.png" alt="">
           </div>
-          <!-- .end .bg-white shadow -->
         </div>
         <!-- .end .wrap -->
       </section>
@@ -134,12 +120,10 @@ html, body {
       <section>
         <!--.wrap = container 1200px -->
         <div class="wrap size-50 aligncenter">
-          <!--<h2><strong>Why WebSlides?</strong></h2>-->
           <p class="text-intro">あれっ… <strong>IE</strong>だけなんかおかしいよ？！</p>
           <div class="bg-white shadow">
             <img src="./images/slide03.png" alt="">
           </div>
-          <!-- .end .bg-white shadow -->
         </div>
         <!-- .end .wrap -->
       </section>
@@ -162,8 +146,7 @@ html, body {
 
 &lt;div class="sample"&gt;
   SVG LOVE
-&lt;/div&gt;
-</pre>
+&lt;/div&gt;</pre>
             </div>
             <!-- .end .column -->
           </div>
@@ -175,11 +158,9 @@ html, body {
       <section>
         <!--.wrap = container 1200px -->
         <div class="wrap size-50 aligncenter">
-          <!--<h2><strong>Why WebSlides?</strong></h2>-->
           <p class="text-intro">いろいろ試してみましたが、<br>今のところ<strong>未解決</strong>です。</p>
           <p>ふえぇ・・・</p>
           <p>どなたか解決方法をご存知ないでしょうか？</p>
-          <!-- .end .bg-white shadow -->
         </div>
         <!-- .end .wrap -->
       </section>
@@ -206,7 +187,5 @@ html, body {
 <!-- jQuery (required for slides to work) -->
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="./js/webslides.js"></script>
-<!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
-<script defer src="./js/svg-icons.js"></script>
 </body>
 </html>
