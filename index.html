@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SVGの背景画像を印刷しようとしたらIEで… | まぼろしのSVG勉強会 その3</title>
+<meta name="description" content="「まぼろしのSVG勉強会 その3」用に作った発表資料です。">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext">
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/mplus1p.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css">
+<!-- CSS Base -->
+<link rel="stylesheet" type='text/css' media='all' href="./css/base.css">
+<!-- CSS Colors -->
+<link rel="stylesheet" type='text/css' media='all' href="./css/colors.css">
+<style>
+html, body {
+  font-family: 'Mplus 1p', 'Roboto', 'San Francisco', helvetica, arial, sans-serif;
+}
+.sampleView {
+  position: relative;
+  width: 340px;
+  height: 140px;
+  margin: 0 auto;
+}
+.sample {
+  position: absolute;
+  font-family: 'Noto Sans Japanese';
+  background-image: url(./images/heart.svg);
+  background-repeat: no-repeat;
+}
+.sample-header {
+  top: 20px;
+  left: 10px;
+  padding-left: 46px;
+  font-size: 22px;
+  line-height: 28px;
+  background-position: 0 center;
+  background-size: 30px auto;
+}
+.sample-main {
+  top: 50%;
+  right: 10px;
+  padding-top: 100px;
+  font-size: 24px;
+  line-height: 1;
+  text-align: center;
+  background-position: center 0;
+  background-size: 90px auto;
+  transform: translateY(-50%);
+}
+.sample-footer {
+  bottom: 16px;
+  left: 17px;
+  padding-left: 26px;
+  font-size: 14px;
+  line-height: 15px;
+  background-position: 0 center;
+  background-size: 16px auto;
+}
+</style>
+</head>
+<body>
+  <header role="banner">
+    <p class="logo">まぼろしのSVG勉強会 その3</p>
+  </header>
+    
+  <main role="main">
+    <article id="webslides" class="vertical">
+      <section class="bg-gray">
+        <span class="background dark" style="background-image:url('./images/slide_cover02.jpg')"></span>
+        <!--.wrap = container 1200px -->
+        <div class="wrap aligncenter">
+          <h1><strong>SVGの背景画像を<br>印刷しようとしたらIEで…</strong></h1>
+          <p class="text-intro" style="margin-top: 40px;">という、解決策の見つかっていない、悲しいお話をします。</p>
+        </div>
+        <!-- .end .wrap -->  
+      </section>
+
+      <section>
+        <!--.wrap = container 1200px -->
+        <div class="wrap size-50 aligncenter">
+          <p class="text-intro">こんなデザインが上がってきたとして…</p>
+          <div class="bg-white shadow">
+            <img src="./images/slide01.png" alt="">
+          </div>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section>
+        <!--.wrap = container 1200px -->
+        <div class="wrap size-50 aligncenter">
+          <p class="text-intro"><strong>アイコン部分はSVGにしーよお♡</strong><br>って思うじゃないですか。</p>
+          <p>実装するじゃないですか。</p>
+          <div class="bg-white shadow">
+            <div class="sampleView">
+              <div class="sample sample-header">SVG LOVE</div>
+              <div class="sample sample-main">SVG LOVE</div>
+              <div class="sample sample-footer">SVG LOVE</div>
+            </div>
+          </div>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section>
+        <!--.wrap = container 1200px -->
+        <div class="wrap size-50 aligncenter">
+          <p class="text-intro">サイトが出来上がってから<strong>「印刷対応して」</strong><br>って言われるじゃないですか。</p>
+          <p>印刷用CSS用意して、各ブラウザで動作確認するじゃないですか。</p>
+          <p>Chrome良し！ Firefox良し！ Safari良し！</p>
+          <div class="bg-white shadow">
+            <img src="./images/slide02.png" alt="">
+          </div>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section>
+        <!--.wrap = container 1200px -->
+        <div class="wrap size-50 aligncenter">
+          <p class="text-intro">あれっ… <strong>IE</strong>だけなんかおかしいよ？！</p>
+          <div class="bg-white shadow">
+            <img src="./images/slide03.png" alt="">
+          </div>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section>
+        <!--.wrap = container 1200px -->
+        <div class="wrap">
+          <div class="grid vertical-align">
+            <div class="column">
+              <p class="text-intro">原因は、SVG画像を<br><strong><code>background-image</code></strong>で指定していたこと。</p>
+              <p><code>img</code>要素で使用しているSVG画像は問題ないのです。</p>
+            </div>
+            <!-- .end .column -->
+            <div class="column">
+              <pre>.sample {
+  background-image: url(./images/heart.svg);
+  background-repeat: no-repeat;
+  background-position: 0 center;
+}
+
+&lt;div class="sample"&gt;
+  SVG LOVE
+&lt;/div&gt;</pre>
+            </div>
+            <!-- .end .column -->
+          </div>
+          <!-- .end .grid -->
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section>
+        <!--.wrap = container 1200px -->
+        <div class="wrap size-50 aligncenter">
+          <p class="text-intro">いろいろ試してみましたが、<br>今のところ<strong>未解決</strong>です。</p>
+          <p>ふえぇ・・・</p>
+          <p>どなたか解決方法をご存知ないでしょうか？</p>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section>
+        <!--.wrap = container 1200px -->
+        <div class="wrap size-50 aligncenter">
+          <h4 style="margin-bottom: 40px;"><strong>そうならないためにできること？</strong></h4>
+          <ul style="text-align: left;">
+            <li>そもそも印刷対応が必要かどうか、最初に確認したほうがいいですよね<br>(特にお役所系クライアントは印刷したがる傾向が…)</li>
+            <li>SVGを使う時は<code>background-image</code>での指定を避ける？</li>
+            <li>代替案としては、疑似要素の<code>content</code>プロパティを使うことかなぁ</li>
+          </ul>
+          <p class="text-intro" style="margin-top: 80px;">終わり</p>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+    </article>
+    <!-- end article -->
+  </main>
+  <!-- end main --> 
+
+<!-- jQuery (required for slides to work) -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="./js/webslides.js"></script>
+</body>
+</html>
